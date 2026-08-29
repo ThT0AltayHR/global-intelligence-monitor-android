@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <ApplicationTitle>Global Intelligence Monitor</ApplicationTitle>
+    <ApplicationId>com.globalintelligence.monitor</ApplicationId>
+    <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SupportedOSPlatformVersion>26</SupportedOSPlatformVersion>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+  </PropertyGroup>
+
+  <!-- The supplied archive has documentation and service sketches but no
+       buildable MAUI project or matching XAML. Preserve that source tree while
+       compiling the verified Android shell below. -->
+  <ItemGroup>
+    <Compile Remove="**/*.cs" />
+    <Compile Include="App.xaml.cs" />
+    <Compile Include="AppShell.xaml.cs" />
+    <Compile Include="MauiProgram.cs" />
+    <Compile Include="MainPage.xaml.cs" />
+    <MauiXaml Remove="**/*.xaml" />
+    <MauiXaml Include="App.xaml" />
+    <MauiXaml Include="AppShell.xaml" />
+    <MauiXaml Include="MainPage.xaml" />
+  </ItemGroup>
+</Project>

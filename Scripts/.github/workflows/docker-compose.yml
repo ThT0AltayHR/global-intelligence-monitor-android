@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - NEWS_API_KEY=${NEWS_API_KEY}
+      - GUARDIAN_API_KEY=${GUARDIAN_API_KEY}
+      - NVD_API_KEY=${NVD_API_KEY}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:

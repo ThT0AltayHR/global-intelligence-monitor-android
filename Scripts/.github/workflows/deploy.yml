@@ -1,0 +1,30 @@
+name: Deploy to Google Play
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build Release APK
+      run: |
+        dotnet workload install maui
+        dotnet publish -f net8.0-android -c Release
+
+    - name: Upload to Google Play
+      uses: r0adkll/upload-google-play@v1
+      with:
+        serviceAccountJsonPlainText: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT }}
+        packageName: com.globalintelligence.monitor
+        releaseFiles: 'bin/Release/net8.0-android/*.aab'
+        track: internal

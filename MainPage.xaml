@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GlobalIntelligenceMonitor.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource PageBackground}"
+    Title="Global Monitor">
+    <ScrollView>
+        <VerticalStackLayout Padding="24,30" Spacing="18">
+            <Label Text="GLOBAL INTELLIGENCE"
+                   TextColor="{StaticResource PrimaryAccent}"
+                   FontSize="25"
+                   FontAttributes="Bold" />
+            <Label Text="Küresel durum izleme paneli"
+                   TextColor="White"
+                   FontSize="18" />
+            <Label Text="Deprem, haber, uçuş, denizcilik ve tehdit kaynakları için tek bakışta başlangıç paneli."
+                   TextColor="{StaticResource MutedText}"
+                   FontSize="14" />
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto"
+                  ColumnSpacing="12" RowSpacing="12">
+                <Border Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource CardBackground}" Stroke="#1D4E70" StrokeShape="RoundRectangle 14" Padding="16">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="🌋" FontSize="24" />
+                        <Label Text="Depremler" TextColor="White" FontAttributes="Bold" />
+                        <Label Text="İzleme hazır" TextColor="#4ADE80" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource CardBackground}" Stroke="#1D4E70" StrokeShape="RoundRectangle 14" Padding="16">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="🛰️" FontSize="24" />
+                        <Label Text="Uçuş &amp; gemi" TextColor="White" FontAttributes="Bold" />
+                        <Label Text="Bağlantı bekliyor" TextColor="{StaticResource MutedText}" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="0" BackgroundColor="{StaticResource CardBackground}" Stroke="#1D4E70" StrokeShape="RoundRectangle 14" Padding="16">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="🛡️" FontSize="24" />
+                        <Label Text="Siber tehditler" TextColor="White" FontAttributes="Bold" />
+                        <Label Text="Kaynak yapılandırılmalı" TextColor="{StaticResource MutedText}" FontSize="12" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource CardBackground}" Stroke="#1D4E70" StrokeShape="RoundRectangle 14" Padding="16">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="📰" FontSize="24" />
+                        <Label Text="Haber akışı" TextColor="White" FontAttributes="Bold" />
+                        <Label Text="Çevrimdışı panel" TextColor="{StaticResource MutedText}" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="#0C3145" Stroke="#0EA5E9" StrokeShape="RoundRectangle 14" Padding="16">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Sistem durumu" TextColor="White" FontAttributes="Bold" />
+                        <Label Text="Uygulama başlatıldı. API anahtarları ve veri sağlayıcıları eklenince canlı katmanlar etkinleştirilebilir."
+                               TextColor="{StaticResource MutedText}" FontSize="13" />
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
